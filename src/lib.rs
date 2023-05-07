@@ -8,7 +8,7 @@
 //!
 //! Get a random user agent from Chrome, Opera, Firefox, Safari, Edge, or Internet Explorer:
 //! ```
-//! use random_user_agent::get_rua;
+//! use fake_user_agent::get_rua;
 //! let rua = get_rua(); // String
 //! ```
 //!
@@ -16,37 +16,37 @@
 //!
 //! Get a random Chrome user agent:
 //! ```
-//! use random_user_agent::get_chrome_rua;
+//! use fake_user_agent::get_chrome_rua;
 //! let rua = get_chrome_rua(); // String
 //! ```
 //!
 //! Get a random Opera user agent:
 //! ```
-//! use random_user_agent::get_opera_rua;
+//! use fake_user_agent::get_opera_rua;
 //! let rua = get_opera_rua(); // String
 //! ```
 //!
 //! Get a random Firefox user agent:
 //! ```
-//! use random_user_agent::get_firefox_rua;
+//! use fake_user_agent::get_firefox_rua;
 //! let rua = get_firefox_rua(); // String
 //! ```
 //!
 //! Get a random Safari user agent:
 //! ```
-//! use random_user_agent::get_safari_rua;
+//! use fake_user_agent::get_safari_rua;
 //! let rua = get_safari_rua(); // String
 //! ```
 //!
 //! Get a random Edge user agent:   
 //! ```
-//! use random_user_agent::get_edge_rua;
+//! use fake_user_agent::get_edge_rua;
 //! let rua = get_edge_rua(); // String
 //! ```
 //!
 //! Get a random Internet Explorer user agent:
 //! ```
-//! use random_user_agent::get_ie_rua;
+//! use fake_user_agent::get_ie_rua;
 //! let rua = get_ie_rua(); // String
 //! ```
 
