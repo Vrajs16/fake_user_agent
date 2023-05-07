@@ -7,7 +7,6 @@ description = "A fake user agent generator for Rust"
 license = "MIT"
 repository = "https://github.com/Vrajs16/fake_user_agent"
 readme = "README.md"
-documentation = "https://docs.rs/fake_user_agent"
 keywords = ["fake", "user", "agent", "generator", "rust"]
 categories = ["development-tools", "internet-protocols", "network-programming"]
 include = ["**/*.rs", "Cargo.toml"]
