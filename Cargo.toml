@@ -1,6 +1,6 @@
 [package]
 name = "fake_user_agent"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Vraj Shah"]
 description = "A fake user agent generator for Rust"
