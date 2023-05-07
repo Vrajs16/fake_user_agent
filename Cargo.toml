@@ -1,6 +1,6 @@
 [package]
 name = "fake_user_agent"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Vraj Shah"]
 description = "A fake user agent generator for Rust"
@@ -8,7 +8,7 @@ license = "MIT"
 repository = "https://github.com/Vrajs16/fake_user_agent"
 readme = "README.md"
 keywords = ["fake", "user", "agent", "generator", "rust"]
-categories = ["development-tools", "internet-protocols", "network-programming"]
+categories = ["development-tools", "network-programming"]
 include = ["**/*.rs", "Cargo.toml"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
