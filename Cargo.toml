@@ -21,6 +21,7 @@ keywords = [
     "fake-useragent",
 ]
 categories = ["development-tools", "internet-protocols", "network-programming"]
+include = ["**/*.rs", "Cargo.toml"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
