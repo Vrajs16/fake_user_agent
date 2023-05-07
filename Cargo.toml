@@ -8,11 +8,11 @@ license = "MIT"
 repository = "https://github.com/Vrajs16/fake_user_agent"
 readme = "README.md"
 keywords = [
-    "fake user agent",
     "fake_ua",
-    "user agent",
-    "user agent generator",
-    "random user agent",
+    "user_agent",
+    "user_agent_generator",
+    "random_user_agent",
+    "rand_ua",
 ]
 categories = ["development-tools", "network-programming"]
 
