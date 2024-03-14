@@ -9,7 +9,7 @@
 //! Get a random user agent from Chrome, Opera, Firefox, Safari, Edge, or Internet Explorer:
 //! ```
 //! use fake_user_agent::get_rua;
-//! let rua = get_rua(); // String
+//! let rua = get_rua(); // &'static str
 //! ```
 //!
 //! If you want a *specific type of browser* user agent, you can use the following:
@@ -17,37 +17,37 @@
 //! Get a random Chrome user agent:
 //! ```
 //! use fake_user_agent::get_chrome_rua;
-//! let rua = get_chrome_rua(); // String
+//! let rua = get_chrome_rua(); // &'static str
 //! ```
 //!
 //! Get a random Opera user agent:
 //! ```
 //! use fake_user_agent::get_opera_rua;
-//! let rua = get_opera_rua(); // String
+//! let rua = get_opera_rua(); // &'static str
 //! ```
 //!
 //! Get a random Firefox user agent:
 //! ```
 //! use fake_user_agent::get_firefox_rua;
-//! let rua = get_firefox_rua(); // String
+//! let rua = get_firefox_rua(); // &'static str
 //! ```
 //!
 //! Get a random Safari user agent:
 //! ```
 //! use fake_user_agent::get_safari_rua;
-//! let rua = get_safari_rua(); // String
+//! let rua = get_safari_rua(); // &'static str
 //! ```
 //!
 //! Get a random Edge user agent:   
 //! ```
 //! use fake_user_agent::get_edge_rua;
-//! let rua = get_edge_rua(); // String
+//! let rua = get_edge_rua(); // &'static str
 //! ```
 //!
 //! Get a random Internet Explorer user agent:
 //! ```
 //! use fake_user_agent::get_ie_rua;
-//! let rua = get_ie_rua(); // String
+//! let rua = get_ie_rua(); // &'static str
 //! ```
 
 /// User agent module
@@ -63,60 +63,60 @@ use user_agents::{
 };
 
 /// Gets a random chrome user agent
-pub fn get_chrome_rua() -> String {
+pub fn get_chrome_rua() -> &'static str {
     let ri = fastrand::usize(..CHROME_USER_AGENTS.len());
-    CHROME_USER_AGENTS[ri].to_string()
+    CHROME_USER_AGENTS[ri]
 }
 
 /// Gets a random opera user agent
-pub fn get_opera_rua() -> String {
+pub fn get_opera_rua() -> &'static str {
     let ri = fastrand::usize(..OPERA_USER_AGENTS.len());
-    OPERA_USER_AGENTS[ri].to_string()
+    OPERA_USER_AGENTS[ri]
 }
 
 /// Gets a random firefox user agent
-pub fn get_firefox_rua() -> String {
+pub fn get_firefox_rua() -> &'static str {
     let ri = fastrand::usize(..FIREFOX_USER_AGENTS.len());
-    FIREFOX_USER_AGENTS[ri].to_string()
+    FIREFOX_USER_AGENTS[ri]
 }
 
 /// Gets a random safari user agent
-pub fn get_safari_rua() -> String {
+pub fn get_safari_rua() -> &'static str {
     let ri = fastrand::usize(..SAFARI_USER_AGENTS.len());
-    SAFARI_USER_AGENTS[ri].to_string()
+    SAFARI_USER_AGENTS[ri]
 }
 
 /// Gets a random edge user agent
-pub fn get_edge_rua() -> String {
+pub fn get_edge_rua() -> &'static str {
     let ri = fastrand::usize(..EDGE_USER_AGENTS.len());
-    EDGE_USER_AGENTS[ri].to_string()
+    EDGE_USER_AGENTS[ri]
 }
 
 /// Gets a random internet explorer user agent
-pub fn get_ie_rua() -> String {
+pub fn get_ie_rua() -> &'static str {
     let ri = fastrand::usize(..IE_USER_AGENTS.len());
-    IE_USER_AGENTS[ri].to_string()
+    IE_USER_AGENTS[ri]
 }
 
 /// Gets a random user agent (Chrome, Opera, Firefox, Safari, Edge, or IE).
-pub fn get_rua() -> String {
+pub fn get_rua() -> &'static str {
     let browser = BrowserType::get_random();
     match browser {
-        BrowserType::CRHOME => get_chrome_rua(),
-        BrowserType::OPERA => get_opera_rua(),
-        BrowserType::FIREFOX => get_firefox_rua(),
-        BrowserType::SAFARI => get_safari_rua(),
-        BrowserType::EDGE => get_edge_rua(),
+        BrowserType::Chrome => get_chrome_rua(),
+        BrowserType::Opera => get_opera_rua(),
+        BrowserType::Firefox => get_firefox_rua(),
+        BrowserType::Safari => get_safari_rua(),
+        BrowserType::Edge => get_edge_rua(),
         BrowserType::IE => get_ie_rua(),
     }
 }
 
 enum BrowserType {
-    CRHOME,
-    OPERA,
-    FIREFOX,
-    SAFARI,
-    EDGE,
+    Chrome,
+    Opera,
+    Firefox,
+    Safari,
+    Edge,
     IE,
 }
 
@@ -124,16 +124,13 @@ impl BrowserType {
     pub fn get_random() -> Self {
         let random_number = fastrand::usize(..5);
         match random_number {
-            0 => BrowserType::CRHOME,
-            1 => BrowserType::OPERA,
-            2 => BrowserType::FIREFOX,
-            3 => BrowserType::SAFARI,
-            4 => BrowserType::EDGE,
+            0 => BrowserType::Chrome,
+            1 => BrowserType::Opera,
+            2 => BrowserType::Firefox,
+            3 => BrowserType::Safari,
+            4 => BrowserType::Edge,
             5 => BrowserType::IE,
-            _ => {
-                println!("Defaulting to Chrome");
-                BrowserType::CRHOME
-            }
+            _ => unreachable!(),
         }
     }
 }
@@ -146,49 +143,49 @@ mod tests {
     fn test_get_chrome_rua() {
         let rua = get_chrome_rua();
         println!("{}", rua);
-        assert!(CHROME_USER_AGENTS.contains(&rua.as_str()));
+        assert!(CHROME_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_opera_rua() {
         let rua = get_opera_rua();
-        assert!(OPERA_USER_AGENTS.contains(&rua.as_str()));
+        assert!(OPERA_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_firefox_rua() {
         let rua = get_firefox_rua();
-        assert!(FIREFOX_USER_AGENTS.contains(&rua.as_str()));
+        assert!(FIREFOX_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_safari_rua() {
         let rua = get_safari_rua();
-        assert!(SAFARI_USER_AGENTS.contains(&rua.as_str()));
+        assert!(SAFARI_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_edge_rua() {
         let rua = get_edge_rua();
-        assert!(EDGE_USER_AGENTS.contains(&rua.as_str()));
+        assert!(EDGE_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_ie_rua() {
         let rua = get_ie_rua();
-        assert!(IE_USER_AGENTS.contains(&rua.as_str()));
+        assert!(IE_USER_AGENTS.contains(&rua));
     }
 
     #[test]
     fn test_get_rua() {
         let rua = get_rua();
         assert!(
-            CHROME_USER_AGENTS.contains(&rua.as_str())
-                || OPERA_USER_AGENTS.contains(&rua.as_str())
-                || FIREFOX_USER_AGENTS.contains(&rua.as_str())
-                || SAFARI_USER_AGENTS.contains(&rua.as_str())
-                || EDGE_USER_AGENTS.contains(&rua.as_str())
-                || IE_USER_AGENTS.contains(&rua.as_str())
+            CHROME_USER_AGENTS.contains(&rua)
+                || OPERA_USER_AGENTS.contains(&rua)
+                || FIREFOX_USER_AGENTS.contains(&rua)
+                || SAFARI_USER_AGENTS.contains(&rua)
+                || EDGE_USER_AGENTS.contains(&rua)
+                || IE_USER_AGENTS.contains(&rua)
         );
     }
 }

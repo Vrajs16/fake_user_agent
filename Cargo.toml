@@ -1,6 +1,6 @@
 [package]
 name = "fake_user_agent"
-version = "0.1.4"
+version = "0.2.0"
 edition = "2021"
 authors = ["Vraj Shah"]
 description = "A simple library for getting random user agents for rust."
@@ -19,4 +19,4 @@ categories = ["development-tools", "network-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-fastrand = "1.9.0"
+fastrand = "2.0.1"
