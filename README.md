@@ -8,7 +8,7 @@ Get a random user agent from Chrome, Opera, Firefox, Safari, Edge, or Internet E
 
 ```rust
 use fake_user_agent::get_rua;
-let rua = get_rua(); // String
+let rua = get_rua(); // &'static str
 ```
 
 If you want a _specific type of browser_ user agent, you can use the following:
@@ -17,40 +17,40 @@ Get a random Chrome user agent:
 
 ```rust
 use fake_user_agent::get_chrome_rua;
-let rua = get_chrome_rua(); // String
+let rua = get_chrome_rua(); // &'static str
 ```
 
 Get a random Opera user agent:
 
 ```rust
 use fake_user_agent::get_opera_rua;
-let rua = get_opera_rua(); // String
+let rua = get_opera_rua(); // &'static str
 ```
 
 Get a random Firefox user agent:
 
 ```rust
 use fake_user_agent::get_firefox_rua;
-let rua = get_firefox_rua(); // String
+let rua = get_firefox_rua(); // &'static str
 ```
 
 Get a random Safari user agent:
 
 ```rust
 use fake_user_agent::get_safari_rua;
-let rua = get_safari_rua(); // String
+let rua = get_safari_rua(); // &'static str
 ```
 
 Get a random Edge user agent:
 
 ```rust
 use fake_user_agent::get_edge_rua;
-let rua = get_edge_rua(); // String
+let rua = get_edge_rua(); // &'static str
 ```
 
 Get a random Internet Explorer user agent:
 
 ```rust
 use fake_user_agent::get_ie_rua;
-let rua = get_ie_rua(); // String
+let rua = get_ie_rua(); // &'static str
 ```
