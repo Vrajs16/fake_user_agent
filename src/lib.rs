@@ -1,8 +1,8 @@
 #![warn(missing_docs)]
 //! A simple library for getting random user agents from a list of popular browsers
-//! such as Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer.
+//! such as Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer in rust.
 //!
-//! The user agents are hard-coded into the binary. They can be found [here](https://github.com/fake-useragent/fake-useragent/blob/master/src/fake_useragent/data/browsers.json).
+//! **NOTE:** The user agents are hard-coded into the binary. They can be found [here](https://github.com/fake-useragent/fake-useragent/blob/main/src/fake_useragent/data/browsers.jsonl).
 //!
 //! # Examples
 //!
@@ -142,7 +142,7 @@ mod tests {
     #[test]
     fn test_get_chrome_rua() {
         let rua = get_chrome_rua();
-        println!("{}", rua);
+        println!("{rua}");
         assert!(CHROME_USER_AGENTS.contains(&rua));
     }
 
