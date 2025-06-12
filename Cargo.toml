@@ -1,6 +1,6 @@
 [package]
 name = "fake_user_agent"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["Vraj Shah"]
 description = "A simple library for getting random user agents for rust."

@@ -1,6 +1,8 @@
 # fake_user_agent
 
-A simple library for getting random user agents for rust.
+A simple library for getting random user agents from a list of popular browsers such as Chrome, Firefox, Safari, Opera, Edge, and Internet Explorer in rust.
+
+**NOTE**: The user agents are hard-coded into the binary. They can be found [here](https://github.com/fake-useragent/fake-useragent/blob/main/src/fake_useragent/data/browsers.jsonl).
 
 ## Usage
 
@@ -11,7 +13,7 @@ use fake_user_agent::get_rua;
 let rua = get_rua(); // &'static str
 ```
 
-If you want a _specific type of browser_ user agent, you can use the following:
+If you want a *specific type of browser* user agent, you can use the following:
 
 Get a random Chrome user agent:
 
