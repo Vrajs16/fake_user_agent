@@ -100,8 +100,7 @@ pub fn get_ie_rua() -> &'static str {
 
 /// Gets a random user agent (Chrome, Opera, Firefox, Safari, Edge, or IE).
 pub fn get_rua() -> &'static str {
-    let browser = BrowserType::get_random();
-    match browser {
+    match BrowserType::get_random() {
         BrowserType::Chrome => get_chrome_rua(),
         BrowserType::Opera => get_opera_rua(),
         BrowserType::Firefox => get_firefox_rua(),
@@ -111,6 +110,7 @@ pub fn get_rua() -> &'static str {
     }
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum BrowserType {
     Chrome,
     Opera,
@@ -120,18 +120,18 @@ enum BrowserType {
     IE,
 }
 
+const ALL_BROWSERS: [BrowserType; 6] = [
+    BrowserType::Chrome,
+    BrowserType::Opera,
+    BrowserType::Firefox,
+    BrowserType::Safari,
+    BrowserType::Edge,
+    BrowserType::IE,
+];
+
 impl BrowserType {
-    pub fn get_random() -> Self {
-        let random_number = fastrand::usize(..5);
-        match random_number {
-            0 => BrowserType::Chrome,
-            1 => BrowserType::Opera,
-            2 => BrowserType::Firefox,
-            3 => BrowserType::Safari,
-            4 => BrowserType::Edge,
-            5 => BrowserType::IE,
-            _ => unreachable!(),
-        }
+    fn get_random() -> Self {
+        ALL_BROWSERS[fastrand::usize(..ALL_BROWSERS.len())]
     }
 }
 
